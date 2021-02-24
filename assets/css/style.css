@@ -6,7 +6,7 @@ body {
     max-width: 600px;
   }
   
-  .secondary-screen {
+  .invisible {
     display: none;
   }
   
