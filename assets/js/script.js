@@ -11,4 +11,4 @@ var start = function() {
     questionEl.removeAttribute("class");
 };
 
-startBtn.addEventListener("click", start());
+startBtn.onclick = start;
