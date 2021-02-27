@@ -11,6 +11,22 @@ var question = [
         choice: ["quotes", "curly brackets", "parenthesis", "square brackets"],
         answer: "parenthesis"
       },
+      {
+        title: "Arrays in JavaScript can be used to store",
+        choice: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        answer: "all of the above"
+      },
+      {
+        title: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choice: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+        answer: "console.log"
+      },
+      {
+        title: "String values must be enclosed within ... when being assigned to variables",
+        choice: ["commas", "curly brackets", "quotes", "parenthesis"],
+        answer: "quotes"
+      },
+
     // more questions to be added here
  ];
 
@@ -23,6 +39,8 @@ var timeEl = document.querySelector("#time-value");
 var questionIndex = 0;
 var choiceEl = document.querySelector("#choice");
 var answerCheckEl = document.querySelector("#check-answer");
+var initialEl = document.querySelector("#initial");
+var submitBtn = document.querySelector("#submit")
 
 
  // functions
@@ -115,8 +133,23 @@ var endQuiz = function() {
   var scoreEl = document.getElementById('final-score')
   scoreEl.textContent = time;
   questionEl.setAttribute("class", "invisible")
-}
+};
 
+// saving high scores
+var saveScores = function() {
+  var name = initialEl.value;
+  if(!name) {
+    var highScore = JSON.parse(window.localStorage.getItem("highScore")) || [];
+    var score = {
+      score: time,
+      name: name
+    };
+    highScore.push(score);
+    window.localStorage.setItem("highScore", JSON.stringify(highScore));
+    // create new html
+  }
+}
     
 
 startBtn.onclick = startQuiz;
+submitBtn.onclick = saveScores();
