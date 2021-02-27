@@ -27,7 +27,8 @@ var answerCheckEl = document.querySelector("#check-answer");
 
  // functions
 
-var start = function() {
+ // starting quiz
+var startQuiz = function() {
     // change the class of our primary screen and make it invisible
     var startQuizEl = document.getElementById("primary-screen");
     startQuizEl.setAttribute("class", "invisible");
@@ -44,14 +45,17 @@ var start = function() {
 
 };
 
+// showing timer
+
 var clock = function() {
     time--;
     timeEl.textContent = time;
     if(time<=0) {
-        // function to end quiz
+        endQuiz();
     }
 };
 
+// displaying quettions
 var questionsQuiz = function() {
     var currentQuestion = question[questionIndex];
     var questionTitleEl = document.getElementById("question-title");
@@ -68,6 +72,8 @@ var questionsQuiz = function() {
         
     };
 
+
+// cheking answers
 var clickQuestion = function() {
   if (this.value !== question[questionIndex].answer) {
     // reduce time
@@ -95,13 +101,22 @@ var clickQuestion = function() {
 
   // time checker
   if (questionIndex === question.length) {
-    // function to end quiz
+    endQuiz();
   } else {
     questionsQuiz();
   }
 };
 
+// ending quiz
+var endQuiz = function() {
+  clearInterval(timer);
+  var endEl = document.getElementById('third-screen');
+  endEl.removeAttribute("class");
+  var scoreEl = document.getElementById('final-score')
+  scoreEl.textContent = time;
+  questionEl.setAttribute("class", "invisible")
+}
 
     
 
-startBtn.onclick = start;
+startBtn.onclick = startQuiz;
