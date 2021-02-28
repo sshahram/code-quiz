@@ -152,6 +152,7 @@ var saveScores = function () {
     window.localStorage.setItem("highscore", JSON.stringify(highScore));
 
     // put view high score page here
+    window.location.href = "view-scores.html";
 
   }
 }
