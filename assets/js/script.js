@@ -157,11 +157,5 @@ var saveScores = function () {
   }
 }
 
-// var enterSubmit = function () {
-//   if(event.key === "Enter" ) {
-//     saveScores();
-//   }
-// }
 submitBtn.onclick = saveScores;
-// initialEl.onkeyup = enterSubmit;
 startBtn.onclick = startQuiz;
