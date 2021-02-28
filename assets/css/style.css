@@ -6,7 +6,7 @@
 
 body {
     font-family:  Helvetica, Arial, sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .screen {
     margin: 100px auto 0 auto;
@@ -103,10 +103,6 @@ body {
       margin: 16px 0px 0px 0px;
       padding: 10px 15px;
     }
-  
-    body {
-      font-size: 1.5rem;
-    }
   }
 
   /* MEDIA QUERY FOR TABLETS AND SMALLER */
@@ -123,7 +119,7 @@ body {
   }
 
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-  @media (max-width: 500px) {
+  @media (max-width: 575px) {
     button {
       font-size: 0.8rem;
     }
