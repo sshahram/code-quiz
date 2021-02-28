@@ -136,20 +136,25 @@ var endQuiz = function() {
 };
 
 // saving high scores
-var saveScores = function() {
-  var name = initialEl.value;
-  if(!name) {
-    var highScore = JSON.parse(window.localStorage.getItem("highScore")) || [];
-    var score = {
+var saveScores = function () {
+  var name = initialEl.value.trim();
+
+  if (name !== "") {
+    var highScore =
+      JSON.parse(window.localStorage.getItem("highScore")) || [];
+
+    var scoreNew = {
       score: time,
-      name: name
+      initial: name
     };
-    highScore.push(score);
-    window.localStorage.setItem("highScore", JSON.stringify(highScore));
-    // create new html
+
+    highScore.push(scoreNew);
+    window.localStorage.setItem("highscore", JSON.stringify(highScore));
+
+    // put view high score page here
+
   }
 }
     
-
+submitBtn.onclick = saveScores;
 startBtn.onclick = startQuiz;
-submitBtn.onclick = saveScores();
