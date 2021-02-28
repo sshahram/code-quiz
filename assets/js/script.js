@@ -106,7 +106,7 @@ var clickQuestion = function() {
     answerCheckEl.style.color = "red";
   } else {
     answerCheckEl.textContent = "Correct!";
-    answerCheckEl.style.color = "green";
+    answerCheckEl.style.color = "blue";
   }
 
   answerCheckEl.setAttribute("class", "check-answer");
