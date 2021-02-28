@@ -14,7 +14,7 @@ var printScores = function () {
     }
     
 function clearScores() {
-      window.localStorage.removeItem("highScore");
+      window.localStorage.removeItem("highscore");
       window.location.reload();
     }
     

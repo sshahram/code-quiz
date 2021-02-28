@@ -141,7 +141,7 @@ var saveScores = function () {
 
   if (name !== "") {
     var highScore =
-      JSON.parse(window.localStorage.getItem("highScore")) || [];
+      JSON.parse(window.localStorage.getItem("highscore")) || [];
 
     var scoreNew = {
       score: time,
